@@ -1,24 +1,26 @@
-name = ""
-while name == "":
-    name = input("名前を入力してください: ").strip()
-    if name == "":
-        print("名前は必須です。もう一度入力してください。")
+def get_name():
+  while True:
+    name = input("what is your name?").strip()
+    if name != "":
+      return name
+    print("Name is required. Please try again.")
+
+name = get_name()
+print(f"Hello, {name}!")
 
 
-age = -1
-while age < 0:
-    age_text = input("年齢を入力してください（０以上の数字) : ").strip()
+def get_age():
+  while True:
+    age_text = input("How old are you?").strip()
     if age_text.isdigit():
-        age = int(age_text)
-        if age < 0:
-            print("0以上の数字を入力してください。")
-    else:
-        print("年齢は数字で入力してください")
+      age = int(age_text)
+      if age >= 0:
+        return age
+    print("Age must be a number 0 or higher. Please try again.")
 
-print(f"こんにちは、{name}さん!")
-      
+age = get_age()
+
 if age >= 18:
-    print("あなたは成人です。")
+    print("You are an adult.")
 else:
-    print("あなたは未成年です。")
-
+    print("You are a minor.")
