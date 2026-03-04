@@ -20,7 +20,19 @@ def get_age():
 
 age = get_age()
 
-if age >= 18:
-    print("You are an adult.")
-else:
-    print("You are a minor.")
+def is_adult(age):
+    return age >= 18
+
+def main():
+   name = get_name()
+   print(f"Hello, {name}!")
+
+   age = get_age()
+   if is_adult(age):
+      print("You are an adult.")
+   else:
+     print("You are a minor.")
+
+
+if __name__ == "__main__":
+   main()
