@@ -41,12 +41,23 @@
 # print("Country:", profile["country"])
 
 
-text = input("Enter 3 fruits separeted by commas: ").strip()
-fruits = text.split(",")
+# text = input("Enter 3 fruits separeted by commas: ").strip()
+# fruits = text.split(",")
 
-cleaned = []
-for fruit in fruits:
-    cleaned.append(fruit.strip())
+# cleaned = []
+# for fruit in fruits:
+#     cleaned.append(fruit.strip())
 
-result = " / ".join(cleaned)
-print(result)
+# result = " / ".join(cleaned)
+# print(result)
+
+text =  input("Write a short memo: ").strip()
+
+with open("memo.txt", "w", encoding="utf-8") as f:
+    f.write(text + "\n")
+
+with open("memo.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+
+print("\nSaved content:")
+print(content)
