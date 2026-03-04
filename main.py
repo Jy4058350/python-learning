@@ -17,14 +17,36 @@
 #     print("Student mode OFF")
 
 
-fruits = []
+# fruits = []
 
-for i in range(3):
-    fruit = input(f"Fruit {i+1}: ").strip()
-    fruits.append(fruit)
+# for i in range(3):
+#     fruit = input(f"Fruit {i+1}: ").strip()
+#     fruits.append(fruit)
 
-print("\nYour fruits:")
+# print("\nYour fruits:")
+# for fruit in fruits:
+#     print("-", fruit)
+
+# print(f"Total: {len(fruits)} items")
+
+# profile = {
+#     "name": input("Name: ").strip(),
+#     "age": int(input("Age: ").strip()),
+#     "country": input("Country: ").strip()
+# }
+
+# print("\n--- Profile ---")
+# print("Name:", profile["name"])
+# print("Age:", profile["age"])
+# print("Country:", profile["country"])
+
+
+text = input("Enter 3 fruits separeted by commas: ").strip()
+fruits = text.split(",")
+
+cleaned = []
 for fruit in fruits:
-    print("-", fruit)
+    cleaned.append(fruit.strip())
 
-print(f"Total: {len(fruits)} items")
+result = " / ".join(cleaned)
+print(result)
